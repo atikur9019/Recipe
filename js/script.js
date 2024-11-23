@@ -90,8 +90,6 @@ if (body) {
                 }
             });
         });
-    } else {
-        alert('The width of the body is greater than 1249px. No need to add the search button.');
     }
 }
 

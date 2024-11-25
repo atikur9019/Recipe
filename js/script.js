@@ -33,6 +33,7 @@ themeSelector.addEventListener('click', () => {
 /*----------------------------search-----------------------------------*/
 
 const body = document.querySelector('body');
+const mainSearchBtn = document.querySelector('.main-search-btn');
 
 let widthBody = parseInt(window.getComputedStyle(body).width); // Convert to number for comparison
 
@@ -41,6 +42,13 @@ if (widthBody <= 1249) {
     searchBtn.addEventListener('click', () => {
         const showBox = document.querySelector('.show-box');
         showBox.classList.toggle('animation');
+        
+        let mainSearchBtnHtml = mainSearchBtn.innerHTML;
+        if (mainSearchBtnHtml === 'search') {
+            mainSearchBtn.innerHTML = 'close';
+        } else if (mainSearchBtnHtml === 'close') {
+            mainSearchBtn.innerHTML = 'search';
+        }
     });
     console.log(`No because width: ${widthBody}`); // Proper string interpolation
 }

@@ -220,6 +220,7 @@ body.dark-mode {
     align-items: center;
     margin-left: 10px;
     border: none;
+    border-radius: 20px;
 }
 
 .main-sidebar .main-sidebar-content .themeAndSearch .theme-selector nav.mode {
@@ -300,6 +301,7 @@ body.dark-mode {
 
     .themeAndSearch .theme-selector {
         width: 60px;
+        border-radius: 20px;
     }
     
 }

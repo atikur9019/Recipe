@@ -329,6 +329,8 @@ main .recipe-container .recipe {
     background-color: var(--box-clr);
     display: flex;
     flex-direction: column;
+    color: var(--body-clr);
+    box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1), -5px -5px 10px rgba(34, 34, 34, 0.5);
 }
 
 main .recipe-container h1 {

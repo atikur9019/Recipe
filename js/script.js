@@ -12,12 +12,14 @@ themeSelector.addEventListener('click', () => {
         // Toggle light and dark mode
         if (modeText === 'light_mode') {
             body.classList.remove('dark-mode');
-            body.setAttribute('class', 'light-mode');
+            body.classList.add('light-mode');
+            // body.setAttribute('class', 'light-mode');
             mode.innerText = 'dark_mode'; // Update icon or text
             
         } else if (modeText === 'dark_mode') {
             body.classList.remove('light-mode');
-            body.setAttribute('class', 'dark-mode');
+            body.classList.add('dark-mode');
+            // body.setAttribute('class', 'dark-mode');
             mode.innerText = 'light_mode'; // Update icon or text
         }
         else {
@@ -105,6 +107,6 @@ mainBtn.addEventListener('click', (e) => {
 
 mainBtn.addEventListener('click', () => {
     const body = document.querySelector('body');
-    body.classList.toggle('hiddenAuto');
+    body.classList.add('hiddenAuto');
 }), 2000;
 

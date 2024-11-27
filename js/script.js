@@ -42,7 +42,8 @@ if (widthBody <= 1249) {
     searchBtn.addEventListener('click', () => {
         const showBox = document.querySelector('.show-box');
         showBox.classList.toggle('animation');
-        
+        // body.classList.toggle = 'hiddenAuto';
+
         let mainSearchBtnHtml = mainSearchBtn.innerHTML;
         if (mainSearchBtnHtml === 'search') {
             mainSearchBtn.innerHTML = 'close';
@@ -73,11 +74,14 @@ if (1249 < widthBody) {
 const mainInput = document.querySelector('.main-input');
 const mainBtn = document.querySelector('.main-btn');
 const recipeContainer = document.querySelector('.recipe-container');
+const h1 = document.querySelector('h1');
 
 const fetchRecipes = async (query) => {
+    h1.innerHTML = '<h2>Waiting...</h2>';
     const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
     const response = await data.json();
     
+    recipeContainer.innerHTML = '';
     response.meals.forEach(meal => {
         const recipeDiv = document.createElement('div');
         recipeDiv.classList.add('recipe');
@@ -98,4 +102,9 @@ mainBtn.addEventListener('click', (e) => {
     fetchRecipes(searchValueInt);
     // console.log(valueInt);  
 });
+
+mainBtn.addEventListener('click', () => {
+    const body = document.querySelector('body');
+    body.classList.toggle('hiddenAuto');
+}), 2000;
 

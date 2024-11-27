@@ -16,8 +16,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- google-icon -->
 
+    <!-- simple-style -->
+     <style>
+        main h3 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        main p {
+            color: #fff;
+            text-align: center;
+        }
+     </style>
+    <!-- simple-style -->
 </head>
 <body class="dark-mode">
+
+    <!-- main-sidebar_style -->
     <aside class="main-sidebar">
         <div class="main-sidebar-content">
             <!-- Logo Section -->
@@ -38,7 +53,7 @@
                 </div>
         
                 <!-- Theme Selector -->
-                <button class="theme-selector">
+                <button type="button" class="theme-selector">
                         <nav value="System" class="mode"><span class="material-symbols-rounded min-mode">light_mode</span></nav>
                 </button>
             </section>
@@ -47,7 +62,9 @@
 
     <!-- main-body_style -->
      <main class="main-body">
-        <h1>search you favrat Recipe</h1>
+        <div class="recipe-container">
+            <h1>Search Your Favorite Recipe</h1>
+        </div>
      </main>
     
     <script src="./js/script.js"></script>

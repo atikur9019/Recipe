@@ -40,8 +40,11 @@
 
 body {
      background-color: var(--body-clr); 
-     overflow: hidden;
-     overflow-y: auto;
+     overflow-x: hidden;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
 }
 
 body.light-mode {
@@ -92,7 +95,7 @@ body.dark-mode {
 .main-sidebar .main-sidebar-content {
     width: 100%;
     height: 100%;
-    min-height: 50px;
+    mix-height: 50px;
     background-color: var(--header-clr);
     border-radius: 20px;
     display: flex;
@@ -111,7 +114,7 @@ body.dark-mode {
 
 .main-sidebar-content .themeAndSearch {
     width: 100%;
-    height: 100%;
+    height: 55px;
     min-height: 50px;
     background: transparent;
     display: flex;
@@ -134,7 +137,7 @@ body.dark-mode {
 .main-sidebar-content .themeAndSearch .search-box input.search-input,
 .themeAndSearch .search-box .show-box input.show-search-input {
     width: 300px;
-    height: 100%;
+    height: 55px;
     min-height: 50px;
     background-color: var(--search-clr);
     border: none;
@@ -150,12 +153,13 @@ body.dark-mode {
 .themeAndSearch .search-box input.search-input::placeholder {
     font-size: 16px;
     text-align: left;
+    /* padding-bottom: 2px; */
 }
 
 
 .themeAndSearch .search-box button.search-btn,
 .themeAndSearch .search-box .show-box button.show-search-btn {
-    height: 50px;
+    height: 55px;
     width: 70px;
     border: none;
     border-radius: 0 20px 20px 0;
@@ -173,7 +177,7 @@ body.dark-mode {
 
 .themeAndSearch .search-box .show-box {
     position: absolute;
-    top: 19%;
+    top: 200px;
     right: 30px;
     width: 300px;
     height: 50px;
@@ -186,19 +190,10 @@ body.dark-mode {
 }
 
 .themeAndSearch .search-box .animation {
-    /* animation: await 0.3s 1 ease-in-out; */
     transform: translateX(10px);
 
 }
 
-@keyframes await {
-    0% {
-       transform: translateX(300px);
-   }
-   100% {
-       transform: translateX(10px);
-   }
-}
 
 .themeAndSearch .search-box .show-box input.show-search-input  {
     width: 100%;
@@ -211,7 +206,7 @@ body.dark-mode {
 
 .themeAndSearch .theme-selector {
     width: 70px;
-    height: 100%;
+    height: 55px;
     min-height: 50px;
     background-color: var(--secondary-color);
     display: flex;
@@ -225,7 +220,7 @@ body.dark-mode {
 
 .main-sidebar .main-sidebar-content .themeAndSearch .theme-selector nav.mode {
     width: 70px;
-    height: 100%;
+    height: 55px;
     min-height: 50px;
     display: flex;
     flex-direction: row;
@@ -304,4 +299,20 @@ body.dark-mode {
         border-radius: 20px;
     }
     
+}
+
+/* -------------------------------------main-style------------------------------------------------ */
+
+main {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: var(--body-clr);
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+main .recipe-container h1 {
+    color: var(--light-mode-header-clr);
 }

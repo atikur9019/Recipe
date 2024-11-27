@@ -50,5 +50,52 @@ if (widthBody <= 1249) {
             mainSearchBtn.innerHTML = 'search';
         }
     });
-    console.log(`No because width: ${widthBody}`); // Proper string interpolation
 }
+
+
+const showSearchBtn = document.querySelector('.show-search-btn');
+const showSearchInput = document.querySelector('.show-search-input');
+const searchBtn = document.querySelector('.search-btn');
+const searchInput = document.querySelector('.search-input');
+
+if (1249 < widthBody) {
+    showSearchInput.classList.remove('main-input');
+    searchInput.classList.add('main-input');
+    showSearchBtn.classList.remove('main-btn');
+    searchBtn.classList.add('main-btn');
+}else if (widthBody <= 1249) {
+    searchInput.classList.remove('main-input');
+    showSearchInput.classList.add('main-input');
+    searchBtn.classList.remove('main-btn');
+    showSearchBtn.classList.add('main-btn');
+}
+
+const mainInput = document.querySelector('.main-input');
+const mainBtn = document.querySelector('.main-btn');
+const recipeContainer = document.querySelector('.recipe-container');
+
+const fetchRecipes = async (query) => {
+    const data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
+    const response = await data.json();
+    
+    response.meals.forEach(meal => {
+        const recipeDiv = document.createElement('div');
+        recipeDiv.classList.add('recipe');
+        recipeDiv.innerHTML = `
+        <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+        <h3>${meal.strMeal}</h3>
+        <P>${meal.strArea}</P>
+        <P>${meal.strCategory}</P>
+        `;
+        console.log(response);
+        
+        recipeContainer.appendChild(recipeDiv);
+    });
+}
+mainBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    let searchValueInt =  mainInput.value.trim();
+    fetchRecipes(searchValueInt);
+    // console.log(valueInt);  
+});
+
